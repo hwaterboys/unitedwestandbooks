@@ -64,7 +64,7 @@ window.UWSB_BOOKS = [
       "Wartime peril: the story is set during a war, and the Prologue recounts unarmed families being killed (told briefly, without graphic detail).",
       "Family separation: a teenage son says an emotional goodbye to his parents and sister as he leaves for war.",
       "Faith themes: covenants, prayer and obedience to God are central, drawing on the Book of Mormon (Alma 53–63).",
-      "No profanity, sexual content or graphic violence was observed in the three preview chapters."
+      "No profanity, vulgarity, sexual content or graphic violence was observed in the three preview chapters."
     ],
 
     retailer_url: null,                              // no purchase link yet: Buy buttons are hidden,
@@ -591,7 +591,7 @@ window.UWSB_BOOKS = [
       "Suspense and menace: armed guards, a surveillance-heavy setting, and threats that the narrator and his family could quietly disappear.",
       "Mentions of guns pointed at the narrator, and references to the atomic bomb and Hiroshima (no graphic violence).",
       "Themes of media manipulation, online reputation, smear campaigns and the pressure of social media.",
-      "No profanity, sexual content or graphic violence was observed in the preview chapter."
+      "No profanity, vulgarity, sexual content or graphic violence was observed in the preview chapter."
     ],
 
     retailer_url: null,                              // no purchase link yet: "Full book coming soon"
@@ -718,7 +718,7 @@ window.UWSB_BOOKS = [
       "Serious illness: the narrator’s sister is undergoing cancer treatment.",
       "Past heartbreak: the narrator refers to painful past relationships and fears being hurt again.",
       "Family tension: her grandfather objects to the televised wedding and most of the family stays away.",
-      "Romance is limited to the wedding ceremony and a kiss on the cheek. No profanity, sexual content or violence was observed in the four preview chapters."
+      "Romance is limited to the wedding ceremony and a kiss on the cheek. No profanity, vulgarity, sexual content or violence was observed in the four preview chapters."
     ],
 
     retailer_url: null, retailer_name: null,
