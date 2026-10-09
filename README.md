@@ -8,7 +8,7 @@ SRS v1.0 (Oct 8, 2026) as far as static hosting allows.
 ```
 index.html                    Home (/)
 why-us/index.html             Why Us (/why-us/)
-books/index.html              Our Books catalog (/books/?genre=romance|thriller|action&q=...)
+books/index.html              Books catalog (/books/?genre=romance|thriller|action&q=...)
 books/book/index.html         Book Detail template (/books/book/?slug=<slug>)
 books/<slug>/index.html       Static share page per book (same detail view, own OG tags)
 books/preview/index.html      Chapter Reader template (/books/preview/?slug=<slug>&chapter=<n>)

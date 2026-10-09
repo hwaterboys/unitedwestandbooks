@@ -266,7 +266,7 @@
 
     var html =
       '<section class="detail-hero on-dark"><div class="container">' +
-        '<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/books/">Our Books</a></li><li><a href="/books/?genre=' + b.genre + '">' + esc(g.label) + '</a></li><li aria-current="page">' + esc(b.title) + '</li></ol></nav>' +
+        '<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/books/">Books</a></li><li><a href="/books/?genre=' + b.genre + '">' + esc(g.label) + '</a></li><li aria-current="page">' + esc(b.title) + '</li></ol></nav>' +
         '<div class="detail-grid">' +
           '<div class="detail-cover">' + coverHTML(b, true) + '</div>' +
           '<div class="detail-info">' +
