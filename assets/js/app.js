@@ -72,6 +72,7 @@
       return esc(s);
     }).join("");
   }
+  function plainText(p) { return Array.isArray(p) ? p.map(function (s) { return s && typeof s === "object" ? (s.i != null ? s.i : s.b) : s; }).join("") : String(p); }
   function paraHTML(para) {
     if (Array.isArray(para)) return "<p>" + runsHTML(para) + "</p>";
     return String(para).trim() === "***" ? '<p class="scene-break" aria-hidden="true">***</p>' : "<p>" + esc(para) + "</p>";
@@ -189,7 +190,7 @@
       var list = books.filter(function (b) {
         if (state.genre !== "all" && b.genre !== state.genre) return false;
         if (!q) return true;
-        var hay = [b.title, b.subtitle, b.tagline, b.series, b.author, b.hook, (b.synopsis || []).join(" ")].join(" ").toLowerCase();
+        var hay = [b.title, b.subtitle, b.tagline, b.series, b.author, b.hook, (b.synopsis || []).map(plainText).join(" ")].join(" ").toLowerCase();
         return hay.indexOf(q) !== -1;
       });
       grid.innerHTML = list.map(card).join("");
@@ -266,7 +267,6 @@
 
     var html =
       '<section class="detail-hero on-dark"><div class="container">' +
-        '<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/books/">Books</a></li><li><a href="/books/?genre=' + b.genre + '">' + esc(g.label) + '</a></li><li aria-current="page">' + esc(b.title) + '</li></ol></nav>' +
         '<div class="detail-grid">' +
           '<div class="detail-cover">' + coverHTML(b, true) + '</div>' +
           '<div class="detail-info">' +
@@ -276,7 +276,7 @@
             (b.subtitle ? '<p class="subtitle">' + esc(b.subtitle) + '</p>' : "") +
             (b.tagline ? '<p class="subtitle tagline">' + esc(b.tagline) + '</p>' : "") +
             (hasAuthor(b) ? '<p class="byline">by <strong>' + esc(b.author) + '</strong></p>' : "") +
-            (b.hook ? '<p class="hook">' + esc(b.hook) + draftTag(b) + '</p>' : "") +
+            (b.hook && b.synopsis_status !== "approved" ? '<p class="hook">' + esc(b.hook) + draftTag(b) + '</p>' : "") +
             '<div class="cta-panel">' + previewBtn + buyButton(b, pc.length ? "btn-ghost btn-lg" : "btn-primary btn-lg") +
               (pc.length ? '<p class="preview-meta">' + icon("i-check") + 'Read ' + pc.length + ' chapter' + (pc.length === 1 ? "" : "s") + ' free. No account or email needed.</p>'
                          : '<p class="preview-meta no-preview">' + icon("i-info") + '<span><strong>Preview chapters coming soon.</strong> Free sample chapters for this title aren\u2019t available yet.</span></p>') +
@@ -289,8 +289,8 @@
       '</div></section>' +
       '<section class="section-tight"><div class="container detail-body">' +
         '<div class="main-col prose">' +
-          '<h2>About the Book' + ((b.synopsis && b.synopsis.length) ? draftTag(b) : "") + '</h2>' +
-          ((b.synopsis && b.synopsis.length) ? b.synopsis.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("")
+          '<h2>About the Book' + ((b.synopsis && b.synopsis.length && b.synopsis_status !== "approved") ? draftTag(b) : "") + '</h2>' +
+          ((b.synopsis && b.synopsis.length) ? b.synopsis.map(function (p) { return "<p>" + runsHTML(p) + "</p>"; }).join("")
             : (b.tagline ? '<p>' + esc(b.tagline) + '.</p>' : "") + '<p class="muted">A full description is coming soon.</p>') +
           (pc.length || locked.length ? '<h2>Chapters</h2><ol class="chapter-list">' +
             pc.map(function (c) {

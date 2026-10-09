@@ -699,12 +699,23 @@ window.UWSB_BOOKS = [
     genre: "romance",
     featured: true,
 
-    /* DRAFT COPY: drafted from the four preview chapters only; needs author approval. */
+    /* Hook and content notes are DRAFT (drafted from the preview chapters; need approval).
+       The synopsis is the owner's official cover description (approved). */
     copy_status: "draft",
+    synopsis_status: "approved",
     hook: "Gold-medal runner Sydney has sworn off Mr. Wrong, so naturally her sister Emily signs her up to marry a total stranger on reality TV.",
     synopsis: [
-      "Told years later by a grandmother to her granddaughter, the story of her three weddings begins in the fall of 2024, when Sydney’s sister Emily, who is fighting cancer, gets her cast on Celebrity Betrothed, a television show whose experts choose your spouse for you.",
-      "Bound by a promise to do the things Emily can’t, and still rehabbing a torn ACL, Sydney lets the show’s analysts find her match and, one month later, walks down the aisle toward a man she has never met. She can walk away after three months, but with the cameras rolling and a history of picking Mr. Wrong, the bigger risk might be hoping again."
+      "Sydney Anderson knows how to win. On the track, she’s unstoppable. But when it comes to relationships, her record is anything but golden. After one heartbreak too many, she’s convinced that finding true love might be the one race she was never meant to win.",
+      ["Then her matchmaking sister enters her into ", {"i": "Celebrity Betrothed"}, ", a reality television experiment that promises to find her perfect match."],
+      "There’s just one small catch.",
+      "She has to marry him before she meets him.",
+      "What could possibly go wrong?",
+      "With cameras capturing every awkward moment, a skeptical family, and a complete stranger waiting at the altar, Sydney finds herself facing a challenge unlike anything she’s ever encountered.",
+      "For the first time in her life, there’s no training plan, no finish line, and no guarantee that giving everything she has will be enough.",
+      "She has three months to decide whether to stay married or walk away.",
+      "But as Sydney soon discovers, some of life’s biggest decisions can’t be measured by a stopwatch, and some risks demand far more than courage.",
+      "She’s spent her entire life learning how to win. But what happens when winning means risking the one thing she’s most afraid to lose?",
+      "Sydney is a captivating, clean contemporary romance filled with humor, unexpected challenges, heartfelt moments, and a journey of faith, trust, and self-discovery."
     ],
 
     cover_image: "/assets/img/books/sydney-600.webp",
@@ -724,7 +735,7 @@ window.UWSB_BOOKS = [
     retailer_url: null, retailer_name: null,
     isbn: null, format: null, release_date: null, price_display: null,
     seo_title: "Sydney",
-    seo_description: "Gold-medal runner Sydney has sworn off Mr. Wrong, so naturally her sister Emily signs her up to marry a total stranger on reality TV. Read the Prologue and first three chapters free.",
+    seo_description: "Sydney Anderson knows how to win. On the track, she’s unstoppable. But when it comes to relationships, her record is anything but golden.",
 
     /* Line 2 of each file (Prologue included) is set in the manuscript's heading style,
        so it is used as the chapter title, not as body text. */
