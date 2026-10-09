@@ -94,3 +94,11 @@ The header uses the full logo (`assets/img/brand/logo-64/128`); below 640px it s
 book-and-star mark plus a text wordmark. The footer uses `logo-112/224`. The logo is only placed on dark
 backgrounds (its silver lettering has too little contrast on the light page colour).
 `uwsb-v2-tools/og_gen.py` re-renders the site and per-book social images (1200x630) with the logo.
+
+## Header tagline and home page
+The header shows the tagline "Great Stories. No Guesswork. No Trash." under the logo on every page (set by
+`TAGLINE` in `uwsb-v2-tools/build.py`, which also feeds the footer, home title and share text). The home page
+follows the owner's StoryBrand wireframe: hero, stakes ("Stop Gambling on Your Next Book"), value proposition
+("Great Stories. No Surprises."), guide + 3-step plan, explanatory section, then the featured books (rendered
+from `books.js`, first three `featured: true` titles). The hero cover arrangement is static markup in build.py
+(`hero_cover(...)`); update it if the featured lineup changes.

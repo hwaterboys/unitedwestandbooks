@@ -409,7 +409,7 @@
     var hasBuy = !!validBuyUrl(b);
     var cont = isLast ? '<section class="continue-cta" aria-labelledby="continue-h">' +
         '<p class="eyebrow center">You\u2019ve reached the end of the free preview</p>' +
-        '<h2 id="continue-h">' + (hasBuy ? "Ready to Find Out What Happens Next?" : "The Story Continues in the Full Book.") + '</h2>' +
+        '<h2 id="continue-h">Love what you have read? Continue the story.</h2>' +
         (hasBuy ? '<p>The rest of ' + esc(b.title) + ' is in the full book. Pick up right where you left off.</p>'
                 : '<p>The rest of ' + esc(b.title) + ' is in the full book, which is coming soon. A purchase link isn\u2019t available yet, so check back soon.</p>') +
         '<div class="btn-row">' + (hasBuy ? buyButton(b, "btn-primary btn-lg") + '<a class="btn btn-ghost btn-lg" href="/books/">Browse More Books</a>'
