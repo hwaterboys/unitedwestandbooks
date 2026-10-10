@@ -733,11 +733,11 @@ window.UWSB_BOOKS = [
       "Sydney is a captivating, clean contemporary romance filled with humor, unexpected challenges, heartfelt moments, and a journey of faith, trust, and self-discovery."
     ],
 
-    cover_image: "/assets/img/books/sydney-600.webp",
-    cover_srcset: "/assets/img/books/sydney-360.webp 360w, /assets/img/books/sydney-600.webp 600w, /assets/img/books/sydney-900.webp 900w",
-    cover_fallback: "/assets/img/books/sydney-600.jpg",
-    cover_alt: "Cover of Sydney. A bride in a flowing white dress, seen from behind, walks barefoot down a stadium running track at sunset, holding high heels in one hand and a bouquet in the other, under bright stadium lights, beneath the title Sydney in gold script with a heart flourish.",
-    og_image: "/assets/img/books/og-sydney.jpg",
+    cover_image: "/assets/img/books/sydney-600.webp?v=2",
+    cover_srcset: "/assets/img/books/sydney-360.webp?v=2 360w, /assets/img/books/sydney-600.webp?v=2 600w, /assets/img/books/sydney-900.webp?v=2 900w",
+    cover_fallback: "/assets/img/books/sydney-600.jpg?v=2",
+    cover_alt: "Cover of Sydney. A bride seen from behind walks down a stadium running track at sunset in a long-sleeved white lace wedding gown with a long train and white high heels, carrying white track spikes in one hand and a bouquet in the other, under bright stadium lights, beneath the title Sydney in gold script with a heart flourish.",
+    og_image: "/assets/img/books/og-sydney.jpg?v=2",
 
     clean_review_status: "pending",
     clean_notes: [
