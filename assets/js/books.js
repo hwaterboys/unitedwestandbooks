@@ -48,7 +48,8 @@ window.UWSB_BOOKS = [
        it) once approved; while "draft" a small "Draft" label shows next to that copy. */
     copy_status: "draft",
     synopsis_status: "approved",
-    hook: "When the fathers of his people are bound by a covenant never to take up weapons again, sixteen-year-old Amarion stands up and volunteers to fight in their place.",
+    hook_status: "approved",
+    hook: "His father cannot fight. But he can. There’s just one small problem. He’s absolutely terrified.",
     synopsis: [
       "Amarion has spent his entire life surrounded by family, friendship, and faith. But as war threatens everything he holds dear, he finds himself facing a decision no sixteen-year-old should ever have to make.",
       "Years earlier, his people made a sacred covenant with God, burying their weapons and promising never to take another life—even if it meant losing their own.",
@@ -716,7 +717,8 @@ window.UWSB_BOOKS = [
        The synopsis is the owner's official cover description (approved). */
     copy_status: "draft",
     synopsis_status: "approved",
-    hook: "Gold-medal runner Sydney has sworn off Mr. Wrong, so naturally her sister Emily signs her up to marry a total stranger on reality TV.",
+    hook_status: "approved",
+    hook: "Sydney Anderson knows how to win. On the track, she’s unstoppable. But when it comes to relationships, her record is anything but golden.",
     synopsis: [
       "Sydney Anderson knows how to win. On the track, she’s unstoppable. But when it comes to relationships, her record is anything but golden. After one heartbreak too many, she’s convinced that finding true love might be the one race she was never meant to win.",
       ["Then her matchmaking sister enters her into ", {"i": "Celebrity Betrothed"}, ", a reality television experiment that promises to find her perfect match."],

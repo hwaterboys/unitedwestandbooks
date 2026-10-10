@@ -77,6 +77,7 @@
     if (Array.isArray(para)) return "<p>" + runsHTML(para) + "</p>";
     return String(para).trim() === "***" ? '<p class="scene-break" aria-hidden="true">***</p>' : "<p>" + esc(para) + "</p>";
   }
+  function hookTag(b) { return b.hook_status === "approved" ? "" : draftTag(b); }
   function draftTag(b) { return b.copy_status === "draft" ? ' <span class="draft-tag" title="Drafted for review; not yet approved by the author">Draft copy</span>' : ""; }
   /* Shown instead of a Buy button when a real book has no retailer link yet. */
   function soonHTML(b, variant) {
@@ -276,7 +277,7 @@
             (b.subtitle ? '<p class="subtitle">' + esc(b.subtitle) + '</p>' : "") +
             (b.tagline ? '<p class="subtitle tagline">' + esc(b.tagline) + '</p>' : "") +
             (hasAuthor(b) ? '<p class="byline">by <strong>' + esc(b.author) + '</strong></p>' : "") +
-            (b.hook && b.synopsis_status !== "approved" ? '<p class="hook">' + esc(b.hook) + draftTag(b) + '</p>' : "") +
+            (b.hook && b.synopsis_status !== "approved" ? '<p class="hook">' + esc(b.hook) + hookTag(b) + '</p>' : "") +
             '<div class="cta-panel">' + previewBtn + buyButton(b, pc.length ? "btn-ghost btn-lg" : "btn-primary btn-lg") +
               (pc.length ? '<p class="preview-meta">' + icon("i-check") + 'Read ' + pc.length + ' chapter' + (pc.length === 1 ? "" : "s") + ' free. No account or email needed.</p>'
                          : '<p class="preview-meta no-preview">' + icon("i-info") + '<span><strong>Preview chapters coming soon.</strong> Free sample chapters for this title aren\u2019t available yet.</span></p>') +
@@ -488,7 +489,7 @@
           '<h3 id="' + hid + '" class="book-title"><a href="' + bookUrl(b) + '">' + titleHTML(b) + '</a></h3>' +
           (b.tagline ? '<p class="tagline">' + esc(b.tagline) + '</p>' : "") +
           (hasAuthor(b) ? '<p class="byline">by ' + esc(b.author) + '</p>' : "") +
-          '<p class="hook">' + esc(b.hook) + draftTag(b) + '</p>' +
+          '<p class="hook">' + esc(b.hook) + hookTag(b) + '</p>' +
           '<div class="btn-row">' +
             (pc.length ? '<a class="btn btn-primary" href="' + chapterUrl(b, pc[0].chapter_number) + '" data-cta="featured-preview">' + icon("i-book") + 'Read ' + readLabel(pc[0]) + ' Free</a>' : "") +
             '<a class="btn btn-ghost" href="' + bookUrl(b) + '" data-cta="featured-book">View Book ' + icon("i-arrow", "i-arrow") + '</a>' +
