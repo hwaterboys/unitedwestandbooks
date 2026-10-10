@@ -49,7 +49,7 @@ window.UWSB_BOOKS = [
     copy_status: "draft",
     synopsis_status: "approved",
     hook_status: "approved",
-    hook: "His father cannot fight. But he can. There’s just one small problem. He’s absolutely terrified.",
+    hook: "Two thousand boys. An impossible war. They’ve been taught to trust God with all their hearts. Now they must decide whether they can trust Him with their lives.",
     synopsis: [
       "Amarion has spent his entire life surrounded by family, friendship, and faith. But as war threatens everything he holds dear, he finds himself facing a decision no sixteen-year-old should ever have to make.",
       "Years earlier, his people made a sacred covenant with God, burying their weapons and promising never to take another life—even if it meant losing their own.",
