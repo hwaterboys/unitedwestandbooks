@@ -47,10 +47,23 @@ window.UWSB_BOOKS = [
        chapters and need author/owner approval. Set copy_status to "approved" (or remove
        it) once approved; while "draft" a small "Draft" label shows next to that copy. */
     copy_status: "draft",
+    synopsis_status: "approved",
     hook: "When the fathers of his people are bound by a covenant never to take up weapons again, sixteen-year-old Amarion stands up and volunteers to fight in their place.",
     synopsis: [
-      "Around 66 B.C., the Anti-Nephi-Lehies, also called the people of Ammon, have buried their weapons and sworn never to fight again, even as the Nephites who gave them refuge are dying in a war against the Lamanites. When Helaman urges the fathers to keep their covenant, Amarion and the other sons step forward, and Helaman agrees to lead them.",
-      "Now Amarion must say goodbye to his family, follow his older brother Moriath into a war he feels far too small for, and put up with Deacon, a talkative twelve-year-old, in a story drawn from Alma 53–63."
+      "Amarion has spent his entire life surrounded by family, friendship, and faith. But as war threatens everything he holds dear, he finds himself facing a decision no sixteen-year-old should ever have to make.",
+      "Years earlier, his people made a sacred covenant with God, burying their weapons and promising never to take another life—even if it meant losing their own.",
+      "Now, with enemy armies advancing and thousands of lives hanging in the balance, that covenant is being put to the ultimate test.",
+      "And Amarion realizes something that will change his life forever.",
+      "His father cannot fight. But he can.",
+      "There’s just one small problem.",
+      "He’s absolutely terrified.",
+      "He’s young, undersized, completely untrained, and about to face seasoned warriors who have spent their lives mastering the art of battle.",
+      "Leaving behind his family, his closest friends, and a young woman he has never found the courage to tell how he feels, Amarion joins two thousand inexperienced boys under the command of Helaman.",
+      "Armed with little more than their determination, the teachings of their mothers, and an unwavering promise that God will deliver them, these young warriors march toward an enemy that vastly outmatches them.",
+      "But as the realities of war draw closer, Amarion discovers that courage isn’t the absence of fear—and faith is much easier to profess when your life isn’t on the line.",
+      "Two thousand boys. An impossible war. A promise from their mothers.",
+      "They’ve been taught to trust God with all their hearts.",
+      "Now they must decide whether they can trust Him with their lives."
     ],
 
     cover_image: "/assets/img/books/amarion-a-call-to-arms-600.webp",
@@ -71,7 +84,7 @@ window.UWSB_BOOKS = [
     retailer_name: null,                             // a "Full book coming soon" note shows instead
     isbn: null, format: null, release_date: null, price_display: null,
     seo_title: "Amarion and the 2000: A Call to Arms",
-    seo_description: "When the fathers of his people are bound by a covenant never to take up weapons again, sixteen-year-old Amarion stands up and volunteers to fight in their place. Read the Prologue and first two chapters free.",
+    seo_description: "Amarion has spent his entire life surrounded by family, friendship, and faith. But as war threatens everything he holds dear, he faces a decision no sixteen-year-old should ever have to make.",
 
     /* Preview chapters: author-supplied text, rendered verbatim (typos and all).
        A paragraph is a string, or an array of strings and {i: "..."} italic runs. */
