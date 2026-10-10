@@ -302,9 +302,6 @@
             }).join("") + '</ol>' : "") +
         '</div>' +
         '<aside class="side-col" aria-label="Book details">' +
-          '<div class="notes-card"><h2>' + icon("i-shield") + 'Content Notes' + draftTag(b) + '</h2>' +
-            ((b.clean_notes && b.clean_notes.length) ? '<ul>' + b.clean_notes.map(function (n) { return "<li>" + esc(n) + "</li>"; }).join("") + '</ul>' : (b.clean_notes_pending ? '<p class="muted">Content notes will be added once this title has been reviewed.</p>' : '<p class="muted">No content notes for this title.</p>')) +
-            '<a class="text-link" href="/clean-book-promise/">Read our Clean-Content Standards' + icon("i-arrow") + '</a></div>' +
           '<div class="notes-card"><h2>' + icon("i-info") + 'Book Details</h2><dl class="facts">' +
             facts.map(function (f) { return "<dt>" + f[0] + "</dt><dd>" + esc(f[1]) + "</dd>"; }).join("") +
             (hasAuthor(b) ? '<dt>Author</dt><dd>' + esc(b.author) + '</dd>' : "") + '<dt>Free chapters</dt><dd>' + (pc.length ? pc.length : 'Coming soon') + '</dd>' +
