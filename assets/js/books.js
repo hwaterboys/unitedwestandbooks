@@ -586,12 +586,26 @@ window.UWSB_BOOKS = [
     genre: "thriller",
     featured: true,
 
-    /* DRAFT COPY: drafted from the Prologue and cover only; needs author approval. */
+    /* Content notes are DRAFT (drafted from the Prologue and cover; need approval). The synopsis is the
+       owner's official cover description and the hook is verbatim from it (both approved). */
     copy_status: "draft",
-    hook: "Alden Kray built the black box hidden six floors underground, and now it decides who gets to be the hero this week and who disappears under a scandal they never saw coming.",
+    synopsis_status: "approved",                    // synopsis = owner's official cover description
+    hook_status: "approved",                         // hook = verbatim from the official cover description
+    hook: "Sydney Devereaux has everything she’s ever wanted. Until one shocking news story changes everything.",
     synopsis: [
-      "Alden Kray helped build the core of a secret system for Eustachy H. Brand: a humming black box in a guarded underground vault that reads people’s digital lives, sorts them into five categories, and quietly boosts the stories of some while burying others under manufactured outrage.",
-      "It works too well. Haunted by Oppenheimer, Alden wants to shut it down, but he knows that if he does, he and his family could simply disappear."
+      "Sydney Devereaux has everything she’s ever wanted. A remarkable career, a loving husband, four beautiful children, and a life filled with happiness.",
+      "Until one shocking news story changes everything.",
+      "Within seconds, accusations spread across the internet. Headlines explode. Social media erupts. Sponsors disappear. Friends grow silent. And millions of people who once celebrated her achievements now question everything they thought they knew about her.",
+      "None of it is true.",
+      "But in a world where accusations travel faster than facts, the truth may no longer matter.",
+      "As Sydney struggles to understand how her entire life could unravel so quickly, her husband, Christian, refuses to stand by and watch everything they’ve built be destroyed.",
+      "What begins as a desperate attempt to clear her name soon leads them into something far more dangerous than either could have imagined.",
+      "And the deeper they dig, the more disturbing the questions become.",
+      "Where did the accusations start?",
+      "Why was Sydney targeted?",
+      "And how far will someone go to make sure the truth never comes to light?",
+      "It took fifteen seconds to destroy her world.",
+      "There is only one way back."
     ],
 
     cover_image: "/assets/img/books/15-seconds-to-ruin-600.webp",
@@ -612,7 +626,7 @@ window.UWSB_BOOKS = [
     retailer_name: null,
     isbn: null, format: null, release_date: null, price_display: null,
     seo_title: "15 Seconds to Ruin",
-    seo_description: "Alden Kray built the black box hidden six floors underground, and now it decides who gets to be the hero this week and who disappears under a scandal they never saw coming. Read the Prologue free.",
+    seo_description: "Sydney Devereaux has everything she’s ever wanted. A remarkable career, a loving husband, four beautiful children, and a life filled with happiness.",
 
     chapters: [
       {
