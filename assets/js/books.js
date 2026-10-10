@@ -9,6 +9,8 @@
    - genre must be one of: "romance", "thriller", "action".
    - slug must be unique, lowercase, hyphenated.
    - retailer_url must be a full https:// URL, or the Buy button is hidden
+   - preorder_url (optional, https, e.g. a Stripe Payment Link) shows a Pre-Order button
+     when there is no retailer_url; preorder_price / preorder_format are shown next to it when set
      (a "Full book coming soon" note shows instead).
    - clean_review_status: "approved" shows the clean-content badge; anything
      else shows no badge.
@@ -23,9 +25,9 @@
      price_display) are hidden when null. An empty author is hidden.
    - cover_image: 2:3 WebP; cover_srcset / cover_fallback (JPG) optional.
      null shows a generated typographic cover. cover_alt is required.
-   - page_path (optional): a static page for the book with its own social
-     sharing tags (see books/amarion-a-call-to-arms/index.html). Otherwise the
-     book lives at /books/book/?slug=<slug>.
+   - page_path: the book's static page, /books/<slug>/. build.py pre-renders it
+     (and each preview chapter at /books/<slug>/preview/<n>/) from this file, so
+     re-run gen_books.py + build.py after any change here.
    ========================================================================== */
 window.UWSB_BOOKS = [
 
@@ -39,16 +41,16 @@ window.UWSB_BOOKS = [
     series: "Amarion and the 2000",                  // shown small above the title, as on the cover
     short_title: "A Call to Arms",                   // shown large, as on the cover
     subtitle: null,
-    author: "",                                      // not provided yet: author is hidden everywhere while empty
+    author: "D’Artagnan",                           // owner decision Oct 10, 2026
     genre: "action",
     featured: true,                                  // shows in the Home page "Featured" section
 
-    /* DRAFT COPY: hook, synopsis and clean_notes were drafted from the three preview
-       chapters and need author/owner approval. Set copy_status to "approved" (or remove
+    /* clean_notes are DRAFT (drafted from the preview chapters; need approval). The hook (hook_status) is verbatim from the official description.
+       The synopsis is the owner's official cover description (approved). Set copy_status to "approved" (or remove
        it) once approved; while "draft" a small "Draft" label shows next to that copy. */
     copy_status: "draft",
-    synopsis_status: "approved",
-    hook_status: "approved",
+    synopsis_status: "approved",                    // synopsis = owner's official cover description
+    hook_status: "approved",                         // hook = verbatim from the official cover description
     hook: "Two thousand boys. An impossible war. They’ve been taught to trust God with all their hearts. Now they must decide whether they can trust Him with their lives.",
     synopsis: [
       "Amarion has spent his entire life surrounded by family, friendship, and faith. But as war threatens everything he holds dear, he finds himself facing a decision no sixteen-year-old should ever have to make.",
@@ -73,7 +75,7 @@ window.UWSB_BOOKS = [
     cover_alt: "Cover of Amarion and the 2000: A Call to Arms. A young warrior in Roman-style armor and a red cape kneels in prayer among jungle temple ruins, his sword and crested helmet beside him, as an army with banners gathers behind him under a stormy, sunlit sky.",
     og_image: "/assets/img/books/og-amarion-a-call-to-arms.jpg",
 
-    clean_review_status: "pending",                  // not reviewed yet: no clean-content badge
+    clean_review_status: "approved",                 // owner: clean-reviewed (Oct 10, 2026); shows the clean-content badge
     clean_notes: [
       "Wartime peril: the story is set during a war, and the Prologue recounts unarmed families being killed (told briefly, without graphic detail).",
       "Family separation: a teenage son says an emotional goodbye to his parents and sister as he leaves for war.",
@@ -82,6 +84,7 @@ window.UWSB_BOOKS = [
     ],
 
     retailer_url: null,                              // no purchase link yet: Buy buttons are hidden,
+    preorder_url: "", preorder_price: "", preorder_format: "",   // Stripe Payment Link (https://buy.stripe.com/...) when pre-orders open
     retailer_name: null,                             // a "Full book coming soon" note shows instead
     isbn: null, format: null, release_date: null, price_display: null,
     seo_title: "Amarion and the 2000: A Call to Arms",
@@ -582,7 +585,7 @@ window.UWSB_BOOKS = [
     series: null, short_title: null,
     subtitle: null,
     tagline: "There’s Only One Way Back",            // cover tagline
-    author: "Michael C. Jones",                       // printed on the cover
+    author: "D’Artagnan",                           // owner decision Oct 10, 2026
     genre: "thriller",
     featured: true,
 
@@ -611,10 +614,10 @@ window.UWSB_BOOKS = [
     cover_image: "/assets/img/books/15-seconds-to-ruin-600.webp",
     cover_srcset: "/assets/img/books/15-seconds-to-ruin-360.webp 360w, /assets/img/books/15-seconds-to-ruin-600.webp 600w, /assets/img/books/15-seconds-to-ruin-900.webp 900w",
     cover_fallback: "/assets/img/books/15-seconds-to-ruin-600.jpg",
-    cover_alt: "Cover of 15 Seconds to Ruin by Michael C. Jones, with the tagline There’s Only One Way Back. A woman seen from behind dissolves into dark fragments on one side, surrounded by floating social media screens showing likes, a 99 notification and a Breaking News banner.",
+    cover_alt: "Cover of 15 Seconds to Ruin, with the tagline There’s Only One Way Back. A woman seen from behind dissolves into dark fragments on one side, surrounded by floating social media screens showing likes, a 99 notification and a Breaking News banner.",
     og_image: "/assets/img/books/og-15-seconds-to-ruin.jpg",
 
-    clean_review_status: "pending",                  // not reviewed yet: no clean-content badge
+    clean_review_status: "approved",                 // owner: clean-reviewed (Oct 10, 2026); shows the clean-content badge
     clean_notes: [
       "Suspense and menace: armed guards, a surveillance-heavy setting, and threats that the narrator and his family could quietly disappear.",
       "Mentions of guns pointed at the narrator, and references to the atomic bomb and Hiroshima (no graphic violence).",
@@ -623,6 +626,7 @@ window.UWSB_BOOKS = [
     ],
 
     retailer_url: null,                              // no purchase link yet: "Full book coming soon"
+    preorder_url: "", preorder_price: "", preorder_format: "",   // Stripe Payment Link (https://buy.stripe.com/...) when pre-orders open
     retailer_name: null,
     isbn: null, format: null, release_date: null, price_display: null,
     seo_title: "15 Seconds to Ruin",
@@ -723,15 +727,15 @@ window.UWSB_BOOKS = [
     status: "published",
     title: "Sydney",
     series: null, short_title: null, subtitle: null, tagline: null,
-    author: "",                                      // not provided yet: hidden
+    author: "D’Artagnan",                           // owner decision Oct 10, 2026
     genre: "romance",
     featured: true,
 
-    /* Hook and content notes are DRAFT (drafted from the preview chapters; need approval).
+    /* Content notes are DRAFT (drafted from the preview chapters; need approval). The hook (hook_status) is verbatim from the official description.
        The synopsis is the owner's official cover description (approved). */
     copy_status: "draft",
     synopsis_status: "approved",
-    hook_status: "approved",
+    hook_status: "approved",                         // hook = verbatim from the official cover description
     hook: "Sydney Anderson knows how to win. On the track, she’s unstoppable. But when it comes to relationships, her record is anything but golden.",
     synopsis: [
       "Sydney Anderson knows how to win. On the track, she’s unstoppable. But when it comes to relationships, her record is anything but golden. After one heartbreak too many, she’s convinced that finding true love might be the one race she was never meant to win.",
@@ -753,7 +757,7 @@ window.UWSB_BOOKS = [
     cover_alt: "Cover of Sydney. A bride seen from behind walks down a stadium running track at sunset in a long-sleeved white lace wedding gown with a long train and white high heels, carrying white track spikes in one hand and a bouquet in the other, under bright stadium lights, beneath the title Sydney in gold script with a heart flourish.",
     og_image: "/assets/img/books/og-sydney.jpg?v=2",
 
-    clean_review_status: "pending",
+    clean_review_status: "approved",                 // owner: clean-reviewed (Oct 10, 2026); shows the clean-content badge
     clean_notes: [
       "Serious illness: the narrator’s sister is undergoing cancer treatment.",
       "Past heartbreak: the narrator refers to painful past relationships and fears being hurt again.",
@@ -762,6 +766,7 @@ window.UWSB_BOOKS = [
     ],
 
     retailer_url: null, retailer_name: null,
+    preorder_url: "", preorder_price: "", preorder_format: "",   // Stripe Payment Link (https://buy.stripe.com/...) when pre-orders open
     isbn: null, format: null, release_date: null, price_display: null,
     seo_title: "Sydney",
     seo_description: "Sydney Anderson knows how to win. On the track, she’s unstoppable. But when it comes to relationships, her record is anything but golden.",
@@ -1519,7 +1524,7 @@ window.UWSB_BOOKS = [
     title: "Through the Gunshots, Fire and Flames",
     series: null, short_title: null, subtitle: null,
     tagline: "Based on actual events from the Grand Blanc shooting",   // cover subtitle
-    author: "",                                      // not provided yet: hidden
+    author: "D’Artagnan",                           // owner decision Oct 10, 2026
     genre: "thriller",                               // closest available filter for now
     featured: false,                                 // no preview chapters yet, so not featured
 
@@ -1534,11 +1539,12 @@ window.UWSB_BOOKS = [
     cover_alt: "Cover of Through the Gunshots, Fire and Flames, based on actual events from the Grand Blanc shooting. A brick church with a white steeple burns against a dark, smoky sky marked with bullet holes.",
     og_image: "/assets/img/books/og-through-the-gunshots-fire-and-flames.jpg",
 
-    clean_review_status: "pending",
+    clean_review_status: "approved",                 // owner: clean-reviewed (Oct 10, 2026); shows the clean-content badge
     clean_notes: [],
     clean_notes_pending: true,                       // shows "Content notes coming after review"
 
     retailer_url: null, retailer_name: null,
+    preorder_url: "", preorder_price: "", preorder_format: "",   // Stripe Payment Link (https://buy.stripe.com/...) when pre-orders open
     isbn: null, format: null, release_date: null, price_display: null,
     seo_title: "Through the Gunshots, Fire and Flames",
     seo_description: "Through the Gunshots, Fire and Flames. Based on actual events from the Grand Blanc shooting. Preview chapters coming soon.",

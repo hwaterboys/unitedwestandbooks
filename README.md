@@ -1,104 +1,40 @@
-# United We Stand Books — website v2 (static)
+# United We Stand Books — website
 
-Plain HTML/CSS/JS. No build step, no dependencies. Built to be hosted on GitHub Pages
-at the domain root (`CNAME` = unitedwestandbooks.com). Implements the front end of the
-SRS v1.0 (Oct 8, 2026) as far as static hosting allows.
+Static site hosted on GitHub Pages at https://unitedwestandbooks.com (`CNAME`).
+Every page is plain, fully rendered HTML; a small script (`assets/js/app.js`) adds enhancements.
 
 ## Structure
 ```
-index.html                    Home (/)
-why-us/index.html             Why Us (/why-us/)
-books/index.html              Books catalog (/books/?genre=romance|thriller|action&q=...)
-books/book/index.html         Book Detail template (/books/book/?slug=<slug>)
-books/<slug>/index.html       Static share page per book (same detail view, own OG tags)
-books/preview/index.html      Chapter Reader template (/books/preview/?slug=<slug>&chapter=<n>)
-how-it-works/index.html       How It Works
-clean-book-promise/index.html Clean-Content Standards (DRAFT, pending owner approval)
-privacy/, terms/              Placeholder legal pages (DRAFT)
-contact/index.html            Contact form layout (NOT connected)
-404.html                      Not-found page (GitHub Pages serves it automatically)
-assets/css/styles.css         All styles + brand tokens
-assets/js/books.js            >>> BOOK DATA — the only file to edit for books <<<
-assets/js/app.js              Nav, catalog search/filter, detail, reader, analytics stub
-assets/img/                   og-image.png (site social share image)
-assets/img/brand/             Official logo cut-outs: logo-*.png/.webp (full logo, transparent),
-                              mark-*.png/.webp (book + star only), favicon.ico, favicon-16/32/48.png,
-                              icon-192/512.png, apple-touch-icon.png (180x180)
-assets/img/books/             Book covers (WebP 360/600/900 + JPG fallback) and per-book OG images
-sitemap.xml, robots.txt, CNAME, .nojekyll
+index.html                              Home
+books/index.html                        Catalog (pre-rendered list; search/filter via JS: /books/?genre=…&q=…)
+books/<slug>/index.html                 Book page (pre-rendered: cover, byline, badges, description, chapters, details, JSON-LD)
+books/<slug>/preview/<n>/index.html     Free preview chapter n (pre-rendered full text; 0 = Prologue)
+books/book/, books/preview/             Old query-string URLs; redirect to the pages above (noindex)
+about/, why-us/, how-it-works/, clean-book-promise/, contact/, privacy/, terms/
+preorder-thanks/                        After-payment page for pre-orders (noindex, not linked)
+404.html                                Not-found page
+assets/css/styles.css                   Styles (minified)
+assets/js/app.js                        Enhancements (minified): nav, catalog search/filter, reader text size,
+                                        progress bar and keyboard navigation, contact form
+assets/js/catalog.js                    Catalog data for search/filter (generated; no chapter text)
+assets/js/books.js                      Book data (generated; source of the pre-rendered pages)
+assets/fonts/                           Self-hosted fonts (Inter, Fraunces, Source Serif 4; latin, woff2)
+assets/img/                             Brand, cover and social-share images
+sitemap.xml, robots.txt                 Generated
 ```
 
-## Books
-All book pages render from `assets/js/books.js` (`window.UWSB_BOOKS`). The placeholder book
-has been removed; the catalog holds four real titles:
-- **Amarion and the 2000: A Call to Arms** (action, `/books/amarion-a-call-to-arms/`)
-- **15 Seconds to Ruin** (thriller, `/books/15-seconds-to-ruin/`)
-- **Sydney** (romance, `/books/sydney/`)
-- **Through the Gunshots, Fire and Flames** (`/books/through-the-gunshots-fire-and-flames/`): no preview
-  chapters yet (`chapters: []`), so it shows "Preview chapters coming soon" instead of Read buttons.
-  Its genre is set to `"thriller"` for now as the closest filter.
- With no books the catalog
-shows a "Our first titles are coming soon" state and the Home "Featured" section hides itself.
+## Editing
+These files are generated. Edit the source and rebuild rather than editing the HTML here:
+book data and copy in `gen_books.py`, page templates in `build.py`, script and styles in `src/app.js`
+and `src/styles.css`; then run `gen_books.py` and `build.py`. The build pre-renders every page,
+minifies CSS/JS (with cache-busting version strings), regenerates `catalog.js`, `sitemap.xml` and
+`robots.txt`, and copies `favicon.ico` / `apple-touch-icon.png` to the site root.
 
-To add a book, copy the Amarion object and fill the fields:
-- `slug` unique, lowercase-hyphenated (book lives at `/books/book/?slug=...`)
-- `page_path` (optional) e.g. `/books/my-slug/`: a static copy of the detail page with the book's own
-  social-share (Open Graph) tags. Generated by `uwsb-v2-tools/build.py` from books.js.
-- `genre`: `"romance"`, `"thriller"` or `"action"`; `status: "published"` to show it
-- `series` + `short_title`: shown as on the cover (series small, title large); `title` is the full title
-- `author`: leave `""` if unknown; it is then hidden everywhere
-- `featured: true` shows the book in the Home page "Featured titles" section (first three featured books)
-- `tagline` (optional): cover tagline, shown under the title
-- `cover_image` (2:3 WebP) + optional `cover_srcset`, `cover_fallback` (JPG), required `cover_alt`;
-  `og_image` (1200x630) for social sharing. Files live in `assets/img/books/`.
-- `clean_review_status: "approved"` shows the clean-content badge (only after review)
-- `clean_notes`: list of content-note strings; `clean_notes_pending: true` shows "Content notes will be
-  added once this title has been reviewed" instead
-- `hook` / `synopsis` are optional; without a synopsis, About shows the tagline and "A full description is coming soon."
-- `copy_status: "draft"` adds a small "Draft copy" label next to the hook, About and Content Notes.
-  Remove it (or set `"approved"`) once the copy is approved.
-- `retailer_url`: full `https://` URL. If missing, Buy buttons are hidden and a
-  "Full book coming soon" note shows on the book page and in the reader.
-- Optional `subtitle, format, release_date, isbn, price_display`: shown only when set
-- `chapters`: `{chapter_number, label, title, epigraph, preview_enabled, status, body}`.
-  `chapter_number` 0 works for a Prologue (`label: "Prologue"`). Each `body` item is a paragraph:
-  a string, or an array of strings, `{i: "..."}` italic runs and `{b: "..."}` bold runs (same for `epigraph`). A paragraph of `"***"` is a scene break.
-  `uwsb-v2-tools/extract_amarion.py` shows how chapter text was pulled verbatim from .docx files.
-Then add the book URL to `sitemap.xml`.
-
-**Security note:** this is a static site, so everything in `books.js` is publicly
-downloadable. Only paste text for chapters that are approved free previews. List
-full-book-only chapters without a `body` (they show as "In the full book" and their
-route shows a "not part of the free preview" message).
+## Forms
+The contact form and "Notify Me" buttons stay hidden until a form service endpoint is set
+(`FORM_ENDPOINT` at the top of `src/app.js`, e.g. a Formspree URL). Until then the contact page says
+"Our contact form is coming soon." Pre-Order buttons appear only for books with a `preorder_url`
+(a Stripe Payment Link).
 
 ## Analytics
-`app.js` pushes SRS §12 events (view_book, filter_books, search_books, open_preview,
-next_chapter, click_purchase, click_primary_cta) to `window.dataLayer`. No analytics tool
-is installed, so nothing leaves the browser. Hook a privacy-conscious tool to `dataLayer`
-and update the Privacy page first.
-
-## Contact form
-Layout only. To enable, point the form at a form service (e.g. Formspree / Netlify Forms
-equivalent), keep the honeypot field, and remove the "Not connected yet" notice.
-
-## Local preview
-`python3 -m http.server 8000` from this folder, then open http://localhost:8000/
-(root-relative links require serving from the folder root, not file://).
-
-## Text corrections
-`uwsb-v2-tools/extract_amarion.py` applies owner-approved corrections on every rebuild
-(currently: 3 misspellings of the narrator's name in the Amarion .docx files are rendered as "Amarion").
-
-## Logo and social images
-The header uses the full logo (`assets/img/brand/logo-64/128`); below 640px it switches to the compact
-book-and-star mark plus a text wordmark. The footer uses `logo-112/224`. The logo is only placed on dark
-backgrounds (its silver lettering has too little contrast on the light page colour).
-`uwsb-v2-tools/og_gen.py` re-renders the site and per-book social images (1200x630) with the logo.
-
-## Header tagline and home page
-The header shows the tagline "Great Stories. No Guesswork. No Trash." under the logo on every page (set by
-`TAGLINE` in `uwsb-v2-tools/build.py`, which also feeds the footer, home title and share text). The home page
-follows the owner's StoryBrand wireframe: hero, stakes ("Stop Gambling on Your Next Book"), value proposition
-("Great Stories. No Surprises."), guide + 3-step plan, explanatory section, then the featured books (rendered
-from `books.js`, first three `featured: true` titles). The hero cover arrangement is static markup in build.py
-(`hero_cover(...)`); update it if the featured lineup changes.
+None installed. `app.js` records events in `window.dataLayer` only; nothing leaves the browser.

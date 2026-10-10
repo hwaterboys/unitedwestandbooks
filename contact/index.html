@@ -12,7 +12,7 @@
   <meta property="og:title" content="Contact Us | United We Stand Books">
   <meta property="og:description" content="Contact United We Stand Books with questions about books, previews or our clean-content standards.">
   <meta property="og:url" content="https://unitedwestandbooks.com/contact/">
-  <meta property="og:image" content="https://unitedwestandbooks.com/assets/img/og-image.png">
+  <meta property="og:image" content="https://unitedwestandbooks.com/assets/img/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="United We Stand Books. Great Stories. No Guesswork. No Trash.">
@@ -22,12 +22,10 @@
   <link rel="icon" href="/assets/img/brand/favicon-16.png" type="image/png" sizes="16x16">
   <link rel="icon" href="/assets/img/brand/icon-192.png" type="image/png" sizes="192x192">
   <link rel="apple-touch-icon" href="/assets/img/brand/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <script src="/assets/js/books.js" defer></script>
-  <script src="/assets/js/app.js" defer></script>
+  <link rel="preload" href="/assets/fonts/inter-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/fraunces-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/styles.css?v=42a430c642">
+  <script src="/assets/js/app.js?v=e439fb8485" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -51,6 +49,7 @@
 <symbol id="i-dice" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="3.5"/><circle cx="8.5" cy="8.5" r="1.1" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1.1" fill="currentColor"/><circle cx="12" cy="12" r="1.1" fill="currentColor"/></g></symbol>
 <symbol id="i-question" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 0 1 4.8.9c0 1.7-2.4 2.1-2.4 3.7M12 17v.1"/></g></symbol>
 <symbol id="i-wallet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M4 7h15a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a2 2 0 0 1 2-2h11v3"/><path d="M16 13h.1" stroke-linecap="round" stroke-width="2.6"/></g></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15Z"/><path d="M10 20.5a2.2 2.2 0 0 0 4 0"/></g></symbol>
 </svg>
 <header class="site-header on-dark">
   <div class="container header-inner">
@@ -66,6 +65,7 @@
         <li><a href="/how-it-works/">How It Works</a></li>
         <li><a href="/clean-book-promise/">Our Promise</a></li>
         <li><a href="/why-us/">Why Us</a></li>
+        <li><a href="/about/">About</a></li>
       </ul>
     </nav>
     <a class="btn btn-primary btn-sm header-cta" href="/books/" data-cta="header">Explore Books</a>
@@ -78,36 +78,57 @@
     <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Contact</li></ol></nav>
     <p class="eyebrow">Get in touch</p>
     <h1>Contact Us</h1>
-    <p class="lead">Questions about a book, a preview or our standards? Send us a note.</p>
+    <p class="lead">Questions about a book, a preview or our standards? We&rsquo;d love to hear from you.</p>
     
   </div>
 </section>
 
-<section class="section section-tint">
+<section class="section section-tint" id="contact">
   <div class="container split">
     <div class="left">
-      <h2>We&rsquo;d Love to Hear from You</h2>
-      <p class="muted">Use the form to ask a question, report a broken link, or tell us about content you believe doesn&rsquo;t meet our <a class="text-link" style="min-height:0" href="/clean-book-promise/">Clean-Content Standards</a>.</p>
-      <div class="draft-banner mt-2" role="note"><svg class="" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><p><strong>Not connected yet.</strong> This form is a layout preview. Messages are not sent or stored until a form service is set up and contact details are approved.</p></div>
+      <div data-mode-show="message">
+        <h2>We&rsquo;d Love to Hear from You</h2>
+        <p class="muted needs-form">Use the form to ask a question, report a broken link, or tell us about content you believe doesn&rsquo;t meet our <a class="text-link" style="min-height:0" href="/clean-book-promise/">Clean-Content Standards</a>.</p>
+        <p class="muted no-form">Have a question, found a broken link, or want to tell us about content you believe doesn&rsquo;t meet our <a class="text-link" style="min-height:0" href="/clean-book-promise/">Clean-Content Standards</a>? We want to hear it.</p>
+      </div>
+      <div data-mode-show="notify" hidden>
+        <h2>Get Notified When It&rsquo;s Available</h2>
+        <p class="muted">Choose a book and leave your email address. We&rsquo;ll let you know when the full book is available. Add a mobile number if you&rsquo;d also like a text.</p>
+      </div>
     </div>
     <div class="right">
-      <form class="form form-card" id="contact-form" novalidate>
-        <div class="form-row">
-          <div class="field"><label for="c-name">Name</label><input id="c-name" name="name" type="text" autocomplete="name" required></div>
-          <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email" required></div>
-        </div>
+      <div class="form-card contact-soon no-form" role="note">
+        <span class="sb-guide-icon" aria-hidden="true"><svg class="" aria-hidden="true" focusable="false"><use href="#i-info"/></svg></span>
+        <h3>Our contact form is coming soon.</h3>
+        <p class="muted">Thanks for your patience while we set it up. In the meantime, you can read free preview chapters of every book.</p>
+        <a class="btn btn-primary" href="/books/">Explore Books <svg class="i-arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="needs-form">
+      <form class="form form-card" id="contact-form" novalidate data-mode="message">
         <div class="field"><label for="c-topic">Topic</label>
           <select id="c-topic" name="topic">
-            <option>General question</option>
-            <option>Report a content concern</option>
-            <option>Book page or purchase link issue</option>
+            <option value="General question">General question</option>
+            <option value="notify">Notify me when a book is available</option>
+            <option value="Report a content concern">Report a content concern</option>
+            <option value="Book page or purchase link issue">Book page or purchase link issue</option>
           </select></div>
-        <div class="field"><label for="c-msg">Message</label><textarea id="c-msg" name="message" required></textarea>
-          <p class="hint">If you&rsquo;re reporting a content concern, please include the book title and chapter.</p></div>
+        <div class="field" data-mode-show="notify" hidden><label for="c-book">Book</label>
+          <select id="c-book" name="book">
+            <option value="any">Any new release</option>
+            <option value="amarion-a-call-to-arms">Amarion and the 2000: A Call to Arms</option><option value="15-seconds-to-ruin">15 Seconds to Ruin</option><option value="sydney">Sydney</option><option value="through-the-gunshots-fire-and-flames">Through the Gunshots, Fire and Flames</option>
+          </select></div>
+        <div class="field" data-mode-show="message"><label for="c-name">Name</label><input id="c-name" name="name" type="text" autocomplete="name" required aria-describedby="c-name-err"><p class="field-error" id="c-name-err" hidden></p></div>
+        <div class="field"><label for="c-email">Email address <span class="req" aria-hidden="true">*</span></label><input id="c-email" name="email" type="email" autocomplete="email" required aria-describedby="c-email-err"><p class="field-error" id="c-email-err" hidden></p></div>
+        <div class="field" data-mode-show="notify" hidden><label for="c-phone">Mobile phone <span class="opt">(optional)</span></label><input id="c-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" aria-describedby="c-phone-hint c-phone-err">
+          <p class="hint" id="c-phone-hint">Add your number if you&rsquo;d like a text when it&rsquo;s available.</p><p class="field-error" id="c-phone-err" hidden></p></div>
+        <div class="field check-field" data-mode-show="notify" hidden><label class="check"><input id="c-sms" name="sms_consent" type="checkbox" value="yes" aria-describedby="c-sms-err"><span>Yes, text me about this book&rsquo;s release. Message and data rates may apply. Reply STOP to opt out.</span></label><p class="field-error" id="c-sms-err" hidden></p></div>
+        <div class="field" data-mode-show="message"><label for="c-msg">Message</label><textarea id="c-msg" name="message" required aria-describedby="c-msg-hint c-msg-err"></textarea>
+          <p class="hint" id="c-msg-hint">If you&rsquo;re reporting a content concern, please include the book title and chapter.</p><p class="field-error" id="c-msg-err" hidden></p></div>
         <div class="hp" aria-hidden="true"><label for="c-web">Leave this field empty</label><input id="c-web" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-        <div><button class="btn btn-primary btn-lg" type="submit">Send Message <svg class="i-arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></button></div>
+        <div><button class="btn btn-primary btn-lg" type="submit" id="c-submit"><span data-mode-show="message">Send Message</span><span data-mode-show="notify" hidden>Notify Me</span> <svg class="i-arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></button></div>
         <p class="form-status" id="form-status" role="status" tabindex="-1" hidden></p>
       </form>
+      </div>
     </div>
   </div>
 </section>
@@ -123,7 +144,7 @@
         <a class="btn btn-primary btn-sm" href="/books/" data-cta="footer">Explore Books <svg class="i-arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
       </div>
       <nav aria-labelledby="f-explore"><h2 id="f-explore">Explore</h2><ul>
-        <li><a href="/">Home</a></li><li><a href="/why-us/">Why Us</a></li><li><a href="/books/">Books</a></li><li><a href="/how-it-works/">How It Works</a></li>
+        <li><a href="/">Home</a></li><li><a href="/books/">Books</a></li><li><a href="/how-it-works/">How It Works</a></li><li><a href="/why-us/">Why Us</a></li><li><a href="/about/">About</a></li>
       </ul></nav>
       <nav aria-labelledby="f-info"><h2 id="f-info">Our Promise</h2><ul>
         <li><a href="/clean-book-promise/">Clean-Content Promise</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms</a></li>

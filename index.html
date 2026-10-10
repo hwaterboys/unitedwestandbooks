@@ -12,7 +12,7 @@
   <meta property="og:title" content="United We Stand Books | Great Stories. No Guesswork. No Trash.">
   <meta property="og:description" content="Your next great book shouldn't be a gamble. Read multiple chapters free before you buy, and discover clean romance, thriller and action stories. Great Stories. No Guesswork. No Trash.">
   <meta property="og:url" content="https://unitedwestandbooks.com/">
-  <meta property="og:image" content="https://unitedwestandbooks.com/assets/img/og-image.png">
+  <meta property="og:image" content="https://unitedwestandbooks.com/assets/img/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="United We Stand Books. Great Stories. No Guesswork. No Trash.">
@@ -22,12 +22,10 @@
   <link rel="icon" href="/assets/img/brand/favicon-16.png" type="image/png" sizes="16x16">
   <link rel="icon" href="/assets/img/brand/icon-192.png" type="image/png" sizes="192x192">
   <link rel="apple-touch-icon" href="/assets/img/brand/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <script src="/assets/js/books.js" defer></script>
-  <script src="/assets/js/app.js" defer></script>
+  <link rel="preload" href="/assets/fonts/inter-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/fraunces-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/styles.css?v=42a430c642">
+  <script src="/assets/js/app.js?v=e439fb8485" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -51,6 +49,7 @@
 <symbol id="i-dice" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="3.5"/><circle cx="8.5" cy="8.5" r="1.1" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1.1" fill="currentColor"/><circle cx="12" cy="12" r="1.1" fill="currentColor"/></g></symbol>
 <symbol id="i-question" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 0 1 4.8.9c0 1.7-2.4 2.1-2.4 3.7M12 17v.1"/></g></symbol>
 <symbol id="i-wallet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M4 7h15a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a2 2 0 0 1 2-2h11v3"/><path d="M16 13h.1" stroke-linecap="round" stroke-width="2.6"/></g></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15Z"/><path d="M10 20.5a2.2 2.2 0 0 0 4 0"/></g></symbol>
 </svg>
 <header class="site-header on-dark">
   <div class="container header-inner">
@@ -66,6 +65,7 @@
         <li><a href="/how-it-works/">How It Works</a></li>
         <li><a href="/clean-book-promise/">Our Promise</a></li>
         <li><a href="/why-us/">Why Us</a></li>
+        <li><a href="/about/">About</a></li>
       </ul>
     </nav>
     <a class="btn btn-primary btn-sm header-cta" href="/books/" data-cta="header">Explore Books</a>
@@ -170,14 +170,14 @@
   </div>
 </section>
 
-<section class="section section-dark on-dark featured" id="featured" aria-labelledby="featured-h" hidden>
+<section class="section section-dark on-dark featured" id="featured" aria-labelledby="featured-h" data-count="3">
   <div class="container">
     <div class="section-head featured-head center">
       <p class="eyebrow center">Featured books</p>
       <h2 id="featured-h">Start Reading Free Today</h2>
       <p class="lead">Open the first pages right here. No account, no email, no guesswork.</p>
     </div>
-    <div class="featured-list" id="featured-list"></div>
+    <div class="featured-list" id="featured-list"><article class="feature-card" aria-labelledby="featured-h-0"><a class="feature-stage" href="/books/amarion-a-call-to-arms/" tabindex="-1" aria-hidden="true" style="--stage-bg:url('/assets/img/books/amarion-a-call-to-arms-360.webp')"><span class="featured-cover"><div class="cover"><picture><source type="image/webp" srcset="/assets/img/books/amarion-a-call-to-arms-360.webp 360w, /assets/img/books/amarion-a-call-to-arms-600.webp 600w, /assets/img/books/amarion-a-call-to-arms-900.webp 900w" sizes="200px"><img src="/assets/img/books/amarion-a-call-to-arms-600.jpg" alt="" width="600" height="900" loading="lazy" decoding="async"></picture></div></span></a><div class="featured-info"><div class="badges"><span class="badge">Action &amp; Adventure</span><span class="badge badge-clean"><svg class="" aria-hidden="true" focusable="false"><use href="#i-shield"/></svg>Clean-content reviewed</span><span class="badge"><svg class="" aria-hidden="true" focusable="false"><use href="#i-eye"/></svg>3 free chapters</span></div><h3 id="featured-h-0" class="book-title"><a href="/books/amarion-a-call-to-arms/"><span class="t-series">Amarion and the 2000<span class="sr-only">: </span></span><span class="t-main">A Call to Arms</span></a></h3><p class="byline">by D’Artagnan</p><p class="hook">Two thousand boys. An impossible war. They’ve been taught to trust God with all their hearts. Now they must decide whether they can trust Him with their lives.</p><div class="btn-row"><a class="btn btn-primary" href="/books/amarion-a-call-to-arms/preview/0/" data-cta="featured-preview"><svg class="" aria-hidden="true" focusable="false"><use href="#i-book"/></svg>Read the Prologue Free</a><a class="btn btn-ghost" href="/books/amarion-a-call-to-arms/" data-cta="featured-book">View Book <svg class="i-arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></div><p class="featured-meta"><svg class="" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Free preview, no account needed. Full book coming soon.</p></div></article><article class="feature-card" aria-labelledby="featured-h-1"><a class="feature-stage" href="/books/15-seconds-to-ruin/" tabindex="-1" aria-hidden="true" style="--stage-bg:url('/assets/img/books/15-seconds-to-ruin-360.webp')"><span class="featured-cover"><div class="cover"><picture><source type="image/webp" srcset="/assets/img/books/15-seconds-to-ruin-360.webp 360w, /assets/img/books/15-seconds-to-ruin-600.webp 600w, /assets/img/books/15-seconds-to-ruin-900.webp 900w" sizes="200px"><img src="/assets/img/books/15-seconds-to-ruin-600.jpg" alt="" width="600" height="900" loading="lazy" decoding="async"></picture></div></span></a><div class="featured-info"><div class="badges"><span class="badge">Thriller</span><span class="badge badge-clean"><svg class="" aria-hidden="true" focusable="false"><use href="#i-shield"/></svg>Clean-content reviewed</span><span class="badge"><svg class="" aria-hidden="true" focusable="false"><use href="#i-eye"/></svg>1 free chapter</span></div><h3 id="featured-h-1" class="book-title"><a href="/books/15-seconds-to-ruin/">15 Seconds to Ruin</a></h3><p class="tagline">There’s Only One Way Back</p><p class="byline">by D’Artagnan</p><p class="hook">Sydney Devereaux has everything she’s ever wanted. Until one shocking news story changes everything.</p><div class="btn-row"><a class="btn btn-primary" href="/books/15-seconds-to-ruin/preview/0/" data-cta="featured-preview"><svg class="" aria-hidden="true" focusable="false"><use href="#i-book"/></svg>Read the Prologue Free</a><a class="btn btn-ghost" href="/books/15-seconds-to-ruin/" data-cta="featured-book">View Book <svg class="i-arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></div><p class="featured-meta"><svg class="" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Free preview, no account needed. Full book coming soon.</p></div></article><article class="feature-card" aria-labelledby="featured-h-2"><a class="feature-stage" href="/books/sydney/" tabindex="-1" aria-hidden="true" style="--stage-bg:url('/assets/img/books/sydney-360.webp?v=2')"><span class="featured-cover"><div class="cover"><picture><source type="image/webp" srcset="/assets/img/books/sydney-360.webp?v=2 360w, /assets/img/books/sydney-600.webp?v=2 600w, /assets/img/books/sydney-900.webp?v=2 900w" sizes="200px"><img src="/assets/img/books/sydney-600.jpg?v=2" alt="" width="600" height="900" loading="lazy" decoding="async"></picture></div></span></a><div class="featured-info"><div class="badges"><span class="badge">Romance</span><span class="badge badge-clean"><svg class="" aria-hidden="true" focusable="false"><use href="#i-shield"/></svg>Clean-content reviewed</span><span class="badge"><svg class="" aria-hidden="true" focusable="false"><use href="#i-eye"/></svg>4 free chapters</span></div><h3 id="featured-h-2" class="book-title"><a href="/books/sydney/">Sydney</a></h3><p class="byline">by D’Artagnan</p><p class="hook">Sydney Anderson knows how to win. On the track, she’s unstoppable. But when it comes to relationships, her record is anything but golden.</p><div class="btn-row"><a class="btn btn-primary" href="/books/sydney/preview/0/" data-cta="featured-preview"><svg class="" aria-hidden="true" focusable="false"><use href="#i-book"/></svg>Read the Prologue Free</a><a class="btn btn-ghost" href="/books/sydney/" data-cta="featured-book">View Book <svg class="i-arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></div><p class="featured-meta"><svg class="" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Free preview, no account needed. Full book coming soon.</p></div></article></div>
     <div class="sb-cta-center"><a class="text-link on-dark-link" href="/books/">See all books <svg class="i-arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></div>
   </div>
 </section>
@@ -194,7 +194,7 @@
         <a class="btn btn-primary btn-sm" href="/books/" data-cta="footer">Explore Books <svg class="i-arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
       </div>
       <nav aria-labelledby="f-explore"><h2 id="f-explore">Explore</h2><ul>
-        <li><a href="/">Home</a></li><li><a href="/why-us/">Why Us</a></li><li><a href="/books/">Books</a></li><li><a href="/how-it-works/">How It Works</a></li>
+        <li><a href="/">Home</a></li><li><a href="/books/">Books</a></li><li><a href="/how-it-works/">How It Works</a></li><li><a href="/why-us/">Why Us</a></li><li><a href="/about/">About</a></li>
       </ul></nav>
       <nav aria-labelledby="f-info"><h2 id="f-info">Our Promise</h2><ul>
         <li><a href="/clean-book-promise/">Clean-Content Promise</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms</a></li>
