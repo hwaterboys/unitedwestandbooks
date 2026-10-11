@@ -2118,6 +2118,57 @@ window.UWSB_BOOKS = [
     ]
   },
 
+  /* ===================== Christian (companion to Sydney; Celebrity Betrothed) ===================== */
+  {
+    id: "christian-001",
+    slug: "christian",
+    page_path: "/books/christian/",
+    status: "published",
+    title: "Christian",
+    series: null, short_title: null, subtitle: null, tagline: null,
+    author: "D’Artagnan",
+    genre: "romance",
+    featured: false,                                 // no preview chapters yet, so not featured
+
+    /* Synopsis = owner's official cover description (approved). The hook (card blurb) is built only
+       from the description's first two lines (owner approved Oct 10, 2026). */
+    copy_status: null,
+    synopsis_status: "approved",
+    hook_status: "approved",                         // owner approved the card blurb (Oct 10, 2026)
+    hook: "On the outside, Christian seems to have it all. On the inside, he’s losing the will to live.",
+    synopsis: [
+      "On the outside, Christian seems to have it all.",
+      "On the inside, he’s losing the will to live.",
+      "Two years ago, a tragic accident shattered Christian’s world. Since then, he’s been fighting a battle no one can see. Haunted by guilt, consumed by depression, and struggling to find the joy he once knew, Christian has begun to wonder if the darkness will ever lift.",
+      "Then his well-meaning family comes up with an unusual plan.",
+      "They enter him into Celebrity Betrothed, a reality television experiment that promises to find the perfect match through science and compatibility.",
+      "For Christian, the idea is ridiculous. He’s barely holding his own life together. How could he possibly share it with someone else?",
+      "But what follows is a journey neither Christian nor anyone around him could have anticipated.",
+      "As unexpected relationships, new experiences, and difficult choices challenge everything he thought he knew, Christian must decide what he’s willing to risk, what he’s willing to fight for, and whether he can find the courage to face a future he had all but given up on.",
+      "Because some battles aren’t fought against the world.",
+      "They’re fought within ourselves.",
+      "Christian has spent two years searching for a way out of the darkness.",
+      "But what if the very things he never wanted are the ones that will change everything?"
+    ],
+
+    cover_image: "/assets/img/books/christian-600.webp",
+    cover_srcset: "/assets/img/books/christian-360.webp 360w, /assets/img/books/christian-600.webp 600w, /assets/img/books/christian-900.webp 900w",
+    cover_fallback: "/assets/img/books/christian-600.jpg",
+    cover_alt: "Cover of Christian. A man in a dark suit, seen from behind, walks away from a misty graveyard with weathered headstones and small candles toward a glowing church aisle lined with candles and white flowers, beneath the title Christian in gold lettering.",
+    og_image: "/assets/img/books/og-christian.jpg",
+
+    clean_review_status: "approved",                 // owner: clean-reviewed (Oct 10, 2026); shows the clean-content badge
+    clean_notes: [],
+
+    retailer_url: null, retailer_name: null,
+    preorder_url: "", preorder_price: "", preorder_format: "",   // Stripe Payment Link (https://buy.stripe.com/...) when pre-orders open
+    isbn: null, format: null, release_date: null, price_display: null,
+    seo_title: "Christian",
+    seo_description: "On the outside, Christian seems to have it all. On the inside, he’s losing the will to live.",
+
+    chapters: []                                     // preview chapters to come
+  },
+
   /* ===================== Through the Gunshots, Fire and Flames ===================== */
   {
     id: "gunshots-001",
