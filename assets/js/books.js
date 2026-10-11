@@ -586,7 +586,8 @@ window.UWSB_BOOKS = [
     subtitle: null,
     tagline: "There’s Only One Way Back",            // cover tagline
     author: "D’Artagnan",                           // owner decision Oct 10, 2026
-    genre: "thriller",
+    genre: "thriller",                               // primary genre (badge, labels)
+    genres: ["thriller", "action"],                  // owner Oct 10, 2026: Thriller and Action & Adventure (both filters)
     featured: true,
 
     /* Content notes are DRAFT (drafted from the Prologue and cover; need approval). The synopsis is the
@@ -2204,6 +2205,114 @@ window.UWSB_BOOKS = [
     seo_description: "Through the Gunshots, Fire and Flames. Based on actual events from the Grand Blanc shooting. Preview chapters coming soon.",
 
     chapters: []                                     // reader version to come later
+  },
+
+  /* ===================== The Girl in 18A (placeholder: no cover, description or chapters yet) ===================== */
+  {
+    id: "girl18a-001",
+    slug: "the-girl-in-18a",
+    page_path: "/books/the-girl-in-18a/",
+    status: "published",
+    title: "The Girl in 18A",
+    series: null, short_title: null, subtitle: null, tagline: null,
+    author: "D’Artagnan",
+    genre: "thriller",
+    featured: false,                                 // no preview chapters yet, so not featured
+
+    /* Synopsis = owner's official description (Oct 10, 2026), verbatim (curly apostrophes, em dashes kept).
+       Hook / meta description = the description's first two lines (owner's own lines). */
+    copy_status: null,
+    synopsis_status: "approved",
+    hook_status: "approved",
+    hook: "One ordinary flight. One mysterious stranger. One encounter that changes everything. But nothing is quite what it seems.",
+    synopsis: [
+      "One ordinary flight. One mysterious stranger. One encounter that changes everything.",
+      "But nothing is quite what it seems.",
+      "What begins as a chance encounter between Amelia and Bryce soon draws them into a dangerous world of secrets, deception, and unexpected alliances, where appearances can be deceiving and trusting the wrong person could prove fatal.",
+      "Together, they become entangled in the pursuit of some of the world’s most powerful and elusive criminals—a journey that takes them far beyond the events of that fateful first flight.",
+      "As they navigate a world where every relationship has a purpose, every secret carries a price, and nothing can be taken at face value, the line between justice and deception begins to blur.",
+      "And the deeper they go, the more questions emerge.",
+      "Who is Amelia, really?",
+      "What secrets lie behind her seemingly ordinary life?",
+      "And how far is she willing to go to bring down people who have spent their lives believing they’re untouchable?",
+      "As the past and present collide, Amelia and Bryce find themselves in a dangerous game where the difference between friend and enemy isn’t always clear—and the greatest threats may come from those they least expect.",
+      "Some people spend their lives running from danger.",
+      "Others have a reason to go looking for it.",
+      "And the girl in 18A may be far more dangerous than anyone realizes."
+    ],
+
+    /* Owner's cover (Oct 10, 2026); source: /workspace/girl-18a/cover.png */
+    cover_placeholder: false,
+    cover_image: "/assets/img/books/the-girl-in-18a-600.webp",
+    cover_srcset: "/assets/img/books/the-girl-in-18a-360.webp 360w, /assets/img/books/the-girl-in-18a-600.webp 600w, /assets/img/books/the-girl-in-18a-900.webp 900w",
+    cover_fallback: "/assets/img/books/the-girl-in-18a-600.jpg",
+    cover_alt: "Cover of The Girl in 18A. A woman gazes out an airplane window at a city at night as a man in a suit stands in the aisle, above a passport and travel papers stamped London, Paris and New York.",
+    og_image: "/assets/img/books/og-the-girl-in-18a.jpg",
+
+    clean_review_status: "pending",                  // not reviewed yet: no clean-content badge
+    clean_notes: [],
+
+    retailer_url: null, retailer_name: null,
+    preorder_url: "", preorder_price: "", preorder_format: "",   // Stripe Payment Link (https://buy.stripe.com/...) when pre-orders open
+    isbn: null, format: null, release_date: null, price_display: null,
+    seo_title: "The Girl in 18A",
+    seo_description: "One ordinary flight. One mysterious stranger. One encounter that changes everything. But nothing is quite what it seems.",
+
+    chapters: []
+  },
+  /* ===================== Until You (placeholder: no cover, description or chapters yet) ===================== */
+  {
+    id: "untilyou-001",
+    slug: "until-you",
+    page_path: "/books/until-you/",
+    status: "published",
+    title: "Until You",
+    series: null, short_title: null, subtitle: null, tagline: null,
+    author: "D’Artagnan",
+    genre: "romance",
+    featured: false,                                 // no preview chapters yet, so not featured
+
+    /* Synopsis = owner's official description (Oct 10, 2026), verbatim (curly apostrophes; double space
+       after "met." collapsed; the author's comma in "But behind the championships, lies" kept as written).
+       Hook / meta description = the description's first two lines (owner's own lines). */
+    copy_status: null,
+    synopsis_status: "approved",
+    hook_status: "approved",
+    hook: "At just twenty-six years old, Jaxon Devereaux has accomplished what no athlete before him ever has. And he would give anything to take it all back.",
+    synopsis: [
+      "At just twenty-six years old, Jaxon Devereaux has accomplished what no athlete before him ever has.",
+      "And he would give anything to take it all back.",
+      "To the world, Jaxon is the greatest athlete of all time. He’s wealthy, famous, adored by millions, and seemingly unstoppable in every sport he plays.",
+      "But behind the championships, lies a secret that threatens to destroy everything he’s worked for.",
+      "A secret that has left him questioning every victory, every accomplishment, and even the man he’s become.",
+      "With the Olympics approaching and the world’s attention fixed on his every move, Jaxon has made a decision. When the Games are over, he’ll walk away from the only life he’s ever known.",
+      "Then he meets Hailey.",
+      "A talented Olympic sprinter with dreams of her own, Hailey is unlike any woman he has ever met. She’s unimpressed by his fame, uninterested in his fortune, and perfectly willing to challenge him.",
+      "For the first time in years, Jaxon meets someone who seems to see beyond the celebrity.",
+      "But the closer they become, the harder it is to hide the truth.",
+      "As their friendship grows and the pressure of competition intensifies, Jaxon finds himself caught between protecting the life he’s built and confronting the secret that could bring it all crashing down.",
+      "He’s spent his entire life learning how to win.",
+      "But what happens when winning has cost him everything that truly matters?"
+    ],
+
+    /* Owner's cover (Oct 10, 2026); source: /workspace/until-you/cover.png */
+    cover_placeholder: false,
+    cover_image: "/assets/img/books/until-you-600.webp",
+    cover_srcset: "/assets/img/books/until-you-360.webp 360w, /assets/img/books/until-you-600.webp 600w, /assets/img/books/until-you-900.webp 900w",
+    cover_fallback: "/assets/img/books/until-you-600.jpg",
+    cover_alt: "Cover of Until You. Two athletes in USA track uniforms embrace on a stadium track at sunset, beneath the title Until You.",
+    og_image: "/assets/img/books/og-until-you.jpg",
+
+    clean_review_status: "pending",                  // not reviewed yet: no clean-content badge
+    clean_notes: [],
+
+    retailer_url: null, retailer_name: null,
+    preorder_url: "", preorder_price: "", preorder_format: "",   // Stripe Payment Link (https://buy.stripe.com/...) when pre-orders open
+    isbn: null, format: null, release_date: null, price_display: null,
+    seo_title: "Until You",
+    seo_description: "At just twenty-six years old, Jaxon Devereaux has accomplished what no athlete before him ever has. And he would give anything to take it all back.",
+
+    chapters: []
   }
 
 ];
