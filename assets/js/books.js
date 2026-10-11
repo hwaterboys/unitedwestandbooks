@@ -612,11 +612,11 @@ window.UWSB_BOOKS = [
       "There is only one way back."
     ],
 
-    cover_image: "/assets/img/books/15-seconds-to-ruin-600.webp",
-    cover_srcset: "/assets/img/books/15-seconds-to-ruin-360.webp 360w, /assets/img/books/15-seconds-to-ruin-600.webp 600w, /assets/img/books/15-seconds-to-ruin-900.webp 900w",
-    cover_fallback: "/assets/img/books/15-seconds-to-ruin-600.jpg",
+    cover_image: "/assets/img/books/15-seconds-to-ruin-600.webp?v=2",
+    cover_srcset: "/assets/img/books/15-seconds-to-ruin-360.webp?v=2 360w, /assets/img/books/15-seconds-to-ruin-600.webp?v=2 600w, /assets/img/books/15-seconds-to-ruin-900.webp?v=2 900w",   // v2: author name removed from cover (Oct 10, 2026); source /workspace/15s/
+    cover_fallback: "/assets/img/books/15-seconds-to-ruin-600.jpg?v=2",
     cover_alt: "Cover of 15 Seconds to Ruin, with the tagline There’s Only One Way Back. A woman seen from behind dissolves into dark fragments on one side, surrounded by floating social media screens showing likes, a 99 notification and a Breaking News banner.",
-    og_image: "/assets/img/books/og-15-seconds-to-ruin.jpg",
+    og_image: "/assets/img/books/og-15-seconds-to-ruin.jpg?v=2",
 
     clean_review_status: "approved",                 // owner: clean-reviewed (Oct 10, 2026); shows the clean-content badge
     clean_notes: [
@@ -2180,7 +2180,8 @@ window.UWSB_BOOKS = [
     series: null, short_title: null, subtitle: null,
     tagline: "Based on actual events from the Grand Blanc shooting",   // cover subtitle
     author: "D’Artagnan",                           // owner decision Oct 10, 2026
-    genre: "thriller",                               // closest available filter for now
+    genre: "historical",                             // owner Oct 10, 2026: Historical Fiction (only)
+    based_on_true_events: true,                      // shows the "Based on True Events" label
     featured: false,                                 // no preview chapters yet, so not featured
 
     /* No description yet: only the cover subtitle is shown. Do not add plot details
@@ -2249,7 +2250,7 @@ window.UWSB_BOOKS = [
     cover_alt: "Cover of The Girl in 18A. A woman gazes out an airplane window at a city at night as a man in a suit stands in the aisle, above a passport and travel papers stamped London, Paris and New York.",
     og_image: "/assets/img/books/og-the-girl-in-18a.jpg",
 
-    clean_review_status: "pending",                  // not reviewed yet: no clean-content badge
+    clean_review_status: "approved",                 // owner: clean-reviewed (Oct 10, 2026); shows the clean-content badge
     clean_notes: [],
 
     retailer_url: null, retailer_name: null,
@@ -2303,7 +2304,7 @@ window.UWSB_BOOKS = [
     cover_alt: "Cover of Until You. Two athletes in USA track uniforms embrace on a stadium track at sunset, beneath the title Until You.",
     og_image: "/assets/img/books/og-until-you.jpg",
 
-    clean_review_status: "pending",                  // not reviewed yet: no clean-content badge
+    clean_review_status: "approved",                 // owner: clean-reviewed (Oct 10, 2026); shows the clean-content badge
     clean_notes: [],
 
     retailer_url: null, retailer_name: null,
